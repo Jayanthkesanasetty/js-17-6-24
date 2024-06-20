@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+        border: 2px solid black;
+        width: 400px;
+        height: 530px;
+        }
+    </style>
+</head>
+<body>
+    <center> <div class="main"></div> 
+    <img src="" class="img" alt="">
+    <h2 class="title"></h2>
+    <h2 class="price"></h2>
+    </center>
+   
+<script>
+    var but=document.createElement("button")
+    but.innerText="Buy"
+    but.style.width="150px"
+  but.style.height="50px"
+  but.style.fontSize="larger"
+  but.style.fontWeight="bolder"
+    but.style.backgroundColor="skyblue"
+    but.style.color="black"
+    var div=document.getElementsByClassName("main")
+    var img=document.getElementsByTagName("img")
+    var title=document.getElementsByClassName("title")
+    var price=document.getElementsByClassName("price")
+
+    var obj= JSON.parse(localStorage.getItem("details"))
+
+    img[0].setAttribute("src",obj.image)
+    img[0].style.width = "360px";
+    img[0].style.height = "300px";
+    title[0].innerText ="Title: "+ obj.title;
+    price[0].innerText="price: "+ obj.price
+    div[0].append(img[0] , title[0], price[0],but)
+    
+    // console.log(obj.title);
+    // console.log(obj.image);
+
+    
+</script>
+</body>
+</html>
+
